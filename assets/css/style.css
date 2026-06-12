@@ -213,7 +213,7 @@ ul.plain li:first-child {
   padding: 0.4rem 1rem;
   border: none;
   background: transparent;
-  color: var(--navy);
+  color: var(--muted);
   cursor: pointer;
 }
 
@@ -221,9 +221,18 @@ ul.plain li:first-child {
   border-left: 1px solid var(--navy);
 }
 
+.tz-toggle button:hover {
+  color: var(--navy);
+}
+
 .tz-toggle button[aria-pressed="true"] {
   background: var(--navy);
-  color: var(--cream);
+  color: #fff;
+  font-weight: 600;
+}
+
+.tz-toggle button[aria-pressed="true"]::before {
+  content: "\2713\00a0";
 }
 
 /* Schedule */
