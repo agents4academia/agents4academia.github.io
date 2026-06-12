@@ -17,6 +17,7 @@
     <nav class="site-nav" aria-label="Primary">
       <a href="./">About</a>
       <a href="schedule.html" aria-current="page">Schedule</a>
+      <a href="projects.html">Projects</a>
       <a href="resources.html">Resources</a>
     </nav>
   </div>
@@ -25,9 +26,126 @@
 <main>
   <div class="wrap">
     <h1>Schedule</h1>
-    <p class="tba">To be announced.</p>
+
+    <div class="tz-toggle" role="group" aria-label="Timezone">
+      <button type="button" id="tz-uk" aria-pressed="true">Oxford (BST)</button>
+      <button type="button" id="tz-sg" aria-pressed="false">Singapore (SGT)</button>
+    </div>
+
+    <p class="tagline" id="tz-note-uk">
+      All times are BST. The joint sessions below run synchronously across
+      Oxford and Singapore; the rest of the day is for building.
+    </p>
+    <p class="tagline" id="tz-note-sg" hidden>
+      All times are SGT. The joint sessions below run synchronously with
+      Oxford in the late afternoon; the rest of the day is for building.
+    </p>
+
+    <h2>Week 1</h2>
+
+    <table class="schedule">
+      <thead>
+        <tr><th class="time">Time</th><th>Session</th></tr>
+      </thead>
+      <tbody>
+        <tr class="day-row"><td colspan="2"><span>Monday 15 June &middot; Kickoff</span><span class="loc" data-uk="Open research zone" data-sg="Location TBD">Open research zone</span></td></tr>
+        <tr><td class="time" data-bst="09:30">09:30</td><td>Welcome and orientation: logistics, schedule, and code of conduct</td></tr>
+        <tr><td class="time" data-bst="09:35">09:35</td><td>Opening talk on the motivation and goals of the hackathon</td></tr>
+        <tr><td class="time" data-bst="09:50">09:50</td><td>Hands-on tutorial on building agents: LLM APIs, agent SDKs, MCP, Claude Code, and context engineering, with a companion Python notebook</td></tr>
+        <tr><td class="time" data-bst="10:50">10:50</td><td>Coffee break</td></tr>
+        <tr><td class="time" data-bst="11:00">11:00</td><td>Ideas round: short introductions and project ideas from every participant</td></tr>
+        <tr><td class="time" data-bst="11:30">11:30</td><td>Idea selection: discussion and voting to surface the projects with the most traction</td></tr>
+        <tr><td class="time" data-bst="12:00">12:00</td><td>End of joint session</td></tr>
+
+        <tr class="day-row"><td colspan="2"><span>Tuesday 16 June &middot; Team formation</span><span class="loc" data-uk="Open research zone" data-sg="Location TBD">Open research zone</span></td></tr>
+        <tr><td class="time" data-bst="09:30">09:30</td><td>Welcome back</td></tr>
+        <tr><td class="time" data-bst="09:35">09:35</td><td>Team formation: breakouts around the selected ideas, across Oxford and Singapore</td></tr>
+        <tr><td class="time" data-bst="10:20">10:20</td><td>Coffee break</td></tr>
+        <tr><td class="time" data-bst="10:30">10:30</td><td>Project scoping: each team sets its aim and demo targets for Friday</td></tr>
+        <tr><td class="time" data-bst="11:15">11:15</td><td>Project announcements: each team presents its aim, targets, and members</td></tr>
+        <tr><td class="time" data-bst="11:45">11:45</td><td>End of joint session</td></tr>
+
+        <tr class="day-row"><td colspan="2"><span>Wednesday 17 June &middot; Build day</span><span class="loc" data-uk="Open research zone" data-sg="Location TBD">Open research zone</span></td></tr>
+        <tr><td class="time" data-bst="11:30">11:30</td><td>Team standups: quick progress updates and blocker sharing across teams</td></tr>
+
+        <tr class="day-row"><td colspan="2"><span>Thursday 18 June &middot; Build day</span><span class="loc" data-uk="Open research zone" data-sg="Location TBD">Open research zone</span></td></tr>
+        <tr><td class="time" data-bst="11:30">11:30</td><td>Team standups: quick progress updates and blocker sharing across teams</td></tr>
+
+        <tr class="day-row"><td colspan="2"><span>Friday 19 June &middot; Mid-hackathon check-in</span><span class="loc" data-uk="Small lecture room" data-sg="Location TBD">Small lecture room</span></td></tr>
+        <tr><td class="time" data-bst="09:30">09:30</td><td>Welcome back</td></tr>
+        <tr><td class="time" data-bst="09:35">09:35</td><td>Mid-hackathon demos: each team shows its progress, with questions and feedback</td></tr>
+        <tr><td class="time" data-bst="10:20">10:20</td><td>Coffee break</td></tr>
+        <tr><td class="time" data-bst="10:30">10:30</td><td>Project re-scoping: teams refine their plans for week two</td></tr>
+        <tr><td class="time" data-bst="11:15">11:15</td><td>End of joint session</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Week 2</h2>
+
+    <table class="schedule">
+      <thead>
+        <tr><th class="time">Time</th><th>Session</th></tr>
+      </thead>
+      <tbody>
+        <tr class="day-row"><td colspan="2"><span>Monday 22 to Thursday 25 June &middot; Build days</span><span class="loc" data-uk="Open research zone" data-sg="Location TBD">Open research zone</span></td></tr>
+        <tr><td class="time" data-bst="11:30">11:30</td><td>Team standups: quick progress updates and blocker sharing across teams</td></tr>
+
+        <tr class="day-row"><td colspan="2"><span>Friday 26 June &middot; Demo day 🎉</span><span class="loc" data-uk="Small lecture room" data-sg="Location TBD">Small lecture room</span></td></tr>
+        <tr><td class="time" data-bst="09:30">09:30</td><td>Welcome and setup</td></tr>
+        <tr><td class="time" data-bst="09:45">09:45</td><td>Final presentations: demos and Q&amp;A in front of organisers, advisors, and invited guests</td></tr>
+        <tr><td class="time" data-bst="11:00">11:00</td><td>Coffee break</td></tr>
+        <tr><td class="time" data-bst="11:20">11:20</td><td>Winner announcement by the judging panel</td></tr>
+        <tr><td class="time" data-bst="11:30">11:30</td><td>Retrospective: what worked, what didn't, and plans for what comes next</td></tr>
+        <tr><td class="time" data-bst="11:50">11:50</td><td>Closing words</td></tr>
+        <tr><td class="time" data-bst="12:00">12:00</td><td>End of hackathon</td></tr>
+      </tbody>
+    </table>
   </div>
 </main>
+
+<script>
+(function () {
+  var OFFSET_HOURS = 7; /* SGT (UTC+8) minus BST (UTC+1) */
+  var ukBtn = document.getElementById("tz-uk");
+  var sgBtn = document.getElementById("tz-sg");
+  var ukNote = document.getElementById("tz-note-uk");
+  var sgNote = document.getElementById("tz-note-sg");
+  var cells = document.querySelectorAll("td.time[data-bst]");
+
+  function toSgt(bst) {
+    var parts = bst.split(":");
+    var h = (parseInt(parts[0], 10) + OFFSET_HOURS) % 24;
+    return (h < 10 ? "0" + h : h) + ":" + parts[1];
+  }
+
+  function show(zone) {
+    var sg = zone === "sg";
+    cells.forEach(function (td) {
+      td.textContent = sg ? toSgt(td.dataset.bst) : td.dataset.bst;
+    });
+    /* Rows tagged for one site only */
+    document.querySelectorAll("[data-site]").forEach(function (row) {
+      row.hidden = row.dataset.site !== zone;
+    });
+    /* Per-site locations */
+    document.querySelectorAll(".loc[data-uk]").forEach(function (el) {
+      el.textContent = sg ? el.dataset.sg : el.dataset.uk;
+    });
+    ukNote.hidden = sg;
+    sgNote.hidden = !sg;
+    ukBtn.setAttribute("aria-pressed", String(!sg));
+    sgBtn.setAttribute("aria-pressed", String(sg));
+    try { localStorage.setItem("tz", zone); } catch (e) {}
+  }
+
+  ukBtn.addEventListener("click", function () { show("uk"); });
+  sgBtn.addEventListener("click", function () { show("sg"); });
+
+  var saved = null;
+  try { saved = localStorage.getItem("tz"); } catch (e) {}
+  show(saved === "sg" ? "sg" : "uk");
+})();
+</script>
 
 </body>
 </html>

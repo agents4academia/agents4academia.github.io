@@ -101,6 +101,16 @@ a {
   color: var(--navy);
 }
 
+.cover {
+  margin: 0 0 2.5rem;
+}
+
+.cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .tagline {
   font-size: 1.15rem;
   color: var(--muted);
@@ -155,6 +165,137 @@ ul.plain li:first-child {
 .tba {
   color: var(--muted);
   font-style: italic;
+}
+
+.ack {
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.ack-label {
+  font-size: 0.95rem;
+  margin: 0 0 0.75rem;
+}
+
+.logo-row {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.logo-row img {
+  height: 14px;
+  width: auto;
+  display: block;
+  opacity: 0.75;
+}
+
+.logo-row a:hover img {
+  opacity: 1;
+}
+
+/* Timezone toggle */
+.tz-toggle {
+  display: inline-flex;
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--navy);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.tz-toggle button {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.4rem 1rem;
+  border: none;
+  background: transparent;
+  color: var(--navy);
+  cursor: pointer;
+}
+
+.tz-toggle button + button {
+  border-left: 1px solid var(--navy);
+}
+
+.tz-toggle button[aria-pressed="true"] {
+  background: var(--navy);
+  color: var(--cream);
+}
+
+/* Schedule */
+table.schedule {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0 2.5rem;
+  font-size: 1.05rem;
+}
+
+table.schedule th,
+table.schedule td {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--rule);
+  vertical-align: top;
+  text-align: left;
+}
+
+table.schedule th {
+  font-weight: 600;
+  color: var(--navy);
+  font-size: 1rem;
+}
+
+table.schedule td.time,
+table.schedule th.time {
+  width: 5.5rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+table.schedule td.time {
+  color: var(--muted);
+}
+
+table.schedule .day-row td {
+  font-weight: 600;
+  color: var(--navy);
+  background: rgba(0, 33, 71, 0.04);
+}
+
+table.schedule .day-row td > span {
+  display: inline-block;
+}
+
+table.schedule .day-row .loc {
+  float: right;
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+/* Resources */
+ul.resources li {
+  padding: 0.9rem 0;
+}
+
+ul.resources li > a {
+  font-weight: 500;
+  font-size: 1.15rem;
+}
+
+ul.resources .src {
+  color: var(--muted);
+  font-size: 1rem;
+  margin-left: 0.5rem;
+}
+
+ul.resources .blurb {
+  margin: 0.25rem 0 0;
+  font-size: 1.05rem;
+  color: var(--ink);
 }
 
 /* Footer */

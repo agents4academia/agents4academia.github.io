@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects — Agents4Academia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./">Agents4Academia</a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="./">About</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="projects.html" aria-current="page">Projects</a>
+      <a href="resources.html">Resources</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <h1>Projects</h1>
+    <p class="tagline">
+      All code from the hackathon lives in the
+      <a href="https://github.com/agents4academia">agents4academia</a> GitHub
+      organisation. Each team maintains its own repository there. The list
+      below updates automatically.
+    </p>
+
+    <ul class="plain resources" id="repo-list">
+      <li class="tba" id="repo-status">Loading repositories&hellip;</li>
+    </ul>
+  </div>
+</main>
+
+<script>
+(function () {
+  var EXCLUDE = ["agents4academia.github.io"];
+  var list = document.getElementById("repo-list");
+  var status = document.getElementById("repo-status");
+
+  function fail() {
+    status.innerHTML =
+      'Could not load the repository list. Browse it directly at ' +
+      '<a href="https://github.com/agents4academia">github.com/agents4academia</a>.';
+  }
+
+  function repoItem(repo) {
+    var li = document.createElement("li");
+
+    var link = document.createElement("a");
+    link.href = repo.html_url;
+    link.textContent = repo.name;
+    li.appendChild(link);
+
+    var meta = [];
+    if (repo.language) meta.push(repo.language);
+    if (repo.stargazers_count > 0) meta.push("★ " + repo.stargazers_count);
+    if (repo.pushed_at) {
+      meta.push("updated " + new Date(repo.pushed_at).toLocaleDateString("en-GB",
+        { day: "numeric", month: "short" }));
+    }
+    if (meta.length) {
+      var src = document.createElement("span");
+      src.className = "src";
+      src.textContent = meta.join(" · ");
+      li.appendChild(src);
+    }
+
+    if (repo.description) {
+      var blurb = document.createElement("p");
+      blurb.className = "blurb";
+      blurb.textContent = repo.description;
+      li.appendChild(blurb);
+    }
+    return li;
+  }
+
+  fetch("https://api.github.com/users/agents4academia/repos?per_page=100&sort=pushed")
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (repos) {
+      repos = repos.filter(function (r) {
+        return EXCLUDE.indexOf(r.name) === -1 && !r.fork;
+      });
+      if (repos.length === 0) {
+        status.textContent =
+          "Project repositories will appear here as teams create them.";
+        return;
+      }
+      list.innerHTML = "";
+      repos.forEach(function (r) { list.appendChild(repoItem(r)); });
+    })
+    .catch(fail);
+})();
+</script>
+
+</body>
+</html>
