@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <title>Oxford–Singapore Hackathon — Agents4Academia</title>
+  <meta name="description" content="A two-week hackathon on AI agents for the scientific process. A collaboration between Oxford, NUS, and NTU, 14–26 June 2026." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;650;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("theme"); } catch (e) {}
+      if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = t;
+    })();
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css?v=6" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../../" title="Agents4Academia — main site">
+      <svg class="node" viewBox="0 0 32 32" aria-hidden="true"><rect x="8" y="13.5" width="16" height="12" rx="3" fill="var(--plot)"/><rect x="11.2" y="16.8" width="2.9" height="4.8" rx="1.45" fill="#fff"/><rect x="17.9" y="16.8" width="2.9" height="4.8" rx="1.45" fill="#fff"/><path d="M2.5 10 16 5.5 29.5 10 16 14.5 Z" fill="var(--ink)"/><path d="M27.6 10.8 V 15.4" stroke="var(--accent)" stroke-width="1.7" stroke-linecap="round"/><circle cx="27.6" cy="17.2" r="2" fill="var(--accent)"/></svg>
+      Agents4Academia
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="./" aria-current="page">About</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="projects.html">Projects</a>
+      <a href="people.html">People</a>
+      <a href="resources.html">Resources</a>
+    </nav>
+    <button class="theme-toggle" aria-label="Toggle dark mode"
+      onclick="var r=document.documentElement;var t=r.dataset.theme==='dark'?'light':'dark';r.dataset.theme=t;try{localStorage.setItem('theme',t)}catch(e){}">
+      <svg class="tt-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4.2"/>
+        <path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5 5l1.7 1.7M17.3 17.3 19 19M19 5l-1.7 1.7M6.7 17.3 5 19"/>
+      </svg>
+      <svg class="tt-moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M20.5 14.6A8.5 8.5 0 0 1 9.4 3.5a8.5 8.5 0 1 0 11.1 11.1z"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <h1>Oxford–Singapore Hackathon</h1>
+    <p class="tagline">A two-week hackathon building AI agents for academia.</p>
+
+    <div class="cover">
+      <img class="light-only" src="assets/img/lifecycle_strip.png" alt="Five agents across the research lifecycle: discover, organise, reproduce, verify, review" />
+      <img class="dark-only" src="assets/img/lifecycle_strip_dark.png" alt="Five agents across the research lifecycle: discover, organise, reproduce, verify, review" />
+    </div>
+
+    <p>
+      Two weeks, three universities, one question: how much of the scientific
+      grind can we hand to AI agents? Researchers from Oxford, NUS, and NTU
+      team up to prototype open-source agents for the parts of research that
+      eat your week: trawling literature, hunting grants, translating across
+      disciplines, coordinating projects, and judging whether research agents
+      are actually any good.
+    </p>
+
+    <p>
+      Everything ships in the open under permissive licences at
+      <a href="https://github.com/agents4academia">github.com/agents4academia</a>.
+      By demo day we want working tools, practical lessons on building research
+      agents, and at least one agent that an academic refuses to stop using.
+    </p>
+
+    <dl class="facts">
+      <div>
+        <dt>Dates</dt>
+        <dd>14 – 26 June 2026</dd>
+      </div>
+      <div>
+        <dt>Venue</dt>
+        <dd>
+          Department of Statistics, University of Oxford<br />
+          National University of Singapore (NUS)<br />
+          Nanyang Technological University (NTU)
+        </dd>
+      </div>
+      <div>
+        <dt>Format</dt>
+        <dd>Invitation-only</dd>
+      </div>
+      <div>
+        <dt>Organizers</dt>
+        <dd>
+          <a href="https://klarakaleb.github.io">Klara Kaleb</a>, <a href="https://harit7.github.io">Harit Vishwakarma</a>, <a href="https://www.stats.ox.ac.uk/~teh/">Yee Whye Teh</a> (Oxford)<br />
+          <a href="https://weiliu876.github.io">Wei Liu</a> (NUS)<br />
+          <a href="https://stevie1023.github.io">Mingye Zhu</a>, <a href="https://hustyyq.github.io">Yunqiao Yang</a> (NTU)
+        </dd>
+      </div>
+      <div>
+        <dt>Advisors</dt>
+        <dd>
+          <a href="https://www.robots.ox.ac.uk/~twgr/">Tom Rainforth</a> (Oxford)<br />
+          <a href="https://www.comp.nus.edu.sg/~leews/">Wee Sun Lee</a> (NUS)<br />
+          <a href="https://www3.ntu.edu.sg/home/luke.ong/">Luke Ong</a> (NTU)
+        </dd>
+      </div>
+      <div>
+        <dt>Participants</dt>
+        <dd><a href="people.html">Researchers from Oxford, NUS, and NTU</a></dd>
+      </div>
+    </dl>
+
+    <div class="ack">
+      <p class="ack-label">Thanks for the support.</p>
+      <ul class="institutions">
+        <li><a href="https://www.anthropic.com"><img class="wordmark" src="assets/img/anthropic.svg" alt="Anthropic" height="18" /></a></li>
+        <li><a href="https://www.stats.ox.ac.uk/" title="Oxford Statistics"><img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/University_of_Oxford.svg/500px-University_of_Oxford.svg.png"
+          alt="University of Oxford" loading="lazy" onerror="this.parentElement.textContent='University of Oxford'" /></a></li>
+        <li><a href="https://www.comp.nus.edu.sg/" title="NUS School of Computing"><img
+          src="assets/img/nus.png"
+          alt="National University of Singapore" loading="lazy" onerror="this.parentElement.textContent='National University of Singapore'" /></a></li>
+        <li><a href="https://www.ntu.edu.sg/computing" title="NTU College of Computing and Data Science"><img
+          src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c6/Nanyang_Technological_University.svg/330px-Nanyang_Technological_University.svg.png"
+          alt="Nanyang Technological University" loading="lazy" onerror="this.parentElement.textContent='Nanyang Technological University'" /></a></li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>

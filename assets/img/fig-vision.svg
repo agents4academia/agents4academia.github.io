@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 265" role="img" aria-label="The research workflow — literature discovery, knowledge organisation, coding, reproducibility, review, teaching &amp; learning, administration — with an agent attached at every stage" font-family="'IBM Plex Mono', ui-monospace, monospace">
+  <!-- The vision: one workflow line, an agent docked at every stage.
+       Labels are the seven areas named in the org README, verbatim. -->
+
+  <!-- workflow line -->
+  <line x1="50" y1="125" x2="1150" y2="125" stroke="#15222f" stroke-width="1.5"/>
+  <line x1="1150" y1="125" x2="1136" y2="119" stroke="#15222f" stroke-width="1.5"/>
+  <line x1="1150" y1="125" x2="1136" y2="131" stroke="#15222f" stroke-width="1.5"/>
+
+  <!-- stations: dot on the line, dashed stem to an agent ring, label opposite -->
+  <g>
+    <!-- 1 literature discovery (label above, agent below) -->
+    <circle cx="120" cy="125" r="4.5" fill="#15222f"/>
+    <text x="120" y="80" text-anchor="middle" font-size="21" fill="#55647a">literature</text>
+    <text x="120" y="104" text-anchor="middle" font-size="21" fill="#55647a">discovery</text>
+    <line x1="120" y1="132" x2="120" y2="158" stroke="#c85c45" stroke-width="1.3" stroke-dasharray="2 4"/>
+    <path transform="translate(120,166)" d="M 0 -7.5 Q 1.9 -1.9 7.5 0 Q 1.9 1.9 0 7.5 Q -1.9 1.9 -7.5 0 Q -1.9 -1.9 0 -7.5 Z" fill="#c85c45"/>
+
+    <!-- 2 knowledge organisation (label below, agent above) -->
+    <circle cx="278" cy="125" r="4.5" fill="#15222f"/>
+    <text x="278" y="152" text-anchor="middle" font-size="21" fill="#55647a">knowledge</text>
+    <text x="278" y="170" text-anchor="middle" font-size="21" fill="#55647a">organisation</text>
+    <line x1="278" y1="118" x2="278" y2="92" stroke="#c85c45" stroke-width="1.3" stroke-dasharray="2 4"/>
+    <path transform="translate(278,84)" d="M 0 -7.5 Q 1.9 -1.9 7.5 0 Q 1.9 1.9 0 7.5 Q -1.9 1.9 -7.5 0 Q -1.9 -1.9 0 -7.5 Z" fill="#c85c45"/>
+
+    <!-- 3 coding (label above, agent below) -->
+    <circle cx="436" cy="125" r="4.5" fill="#15222f"/>
+    <text x="436" y="104" text-anchor="middle" font-size="21" fill="#55647a">coding</text>
+    <line x1="436" y1="132" x2="436" y2="158" stroke="#c85c45" stroke-width="1.3" stroke-dasharray="2 4"/>
+    <path transform="translate(436,166)" d="M 0 -7.5 Q 1.9 -1.9 7.5 0 Q 1.9 1.9 0 7.5 Q -1.9 1.9 -7.5 0 Q -1.9 -1.9 0 -7.5 Z" fill="#c85c45"/>
+
+    <!-- 4 reproducibility (label below, agent above) -->
+    <circle cx="594" cy="125" r="4.5" fill="#15222f"/>
+    <text x="594" y="152" text-anchor="middle" font-size="21" fill="#55647a">reproducibility</text>
+    <line x1="594" y1="118" x2="594" y2="92" stroke="#c85c45" stroke-width="1.3" stroke-dasharray="2 4"/>
+    <path transform="translate(594,84)" d="M 0 -7.5 Q 1.9 -1.9 7.5 0 Q 1.9 1.9 0 7.5 Q -1.9 1.9 -7.5 0 Q -1.9 -1.9 0 -7.5 Z" fill="#c85c45"/>
+
+    <!-- 5 review (label above, agent below) -->
+    <circle cx="752" cy="125" r="4.5" fill="#15222f"/>
+    <text x="752" y="104" text-anchor="middle" font-size="21" fill="#55647a">review</text>
+    <line x1="752" y1="132" x2="752" y2="158" stroke="#c85c45" stroke-width="1.3" stroke-dasharray="2 4"/>
+    <path transform="translate(752,166)" d="M 0 -7.5 Q 1.9 -1.9 7.5 0 Q 1.9 1.9 0 7.5 Q -1.9 1.9 -7.5 0 Q -1.9 -1.9 0 -7.5 Z" fill="#c85c45"/>
+
+    <!-- 6 teaching (label below, agent above) -->
+    <circle cx="910" cy="125" r="4.5" fill="#15222f"/>
+    <text x="910" y="152" text-anchor="middle" font-size="21" fill="#55647a">teaching &amp; learning</text>
+    <line x1="910" y1="118" x2="910" y2="92" stroke="#c85c45" stroke-width="1.3" stroke-dasharray="2 4"/>
+    <path transform="translate(910,84)" d="M 0 -7.5 Q 1.9 -1.9 7.5 0 Q 1.9 1.9 0 7.5 Q -1.9 1.9 -7.5 0 Q -1.9 -1.9 0 -7.5 Z" fill="#c85c45"/>
+
+    <!-- 7 administration (label above, agent below) -->
+    <circle cx="1068" cy="125" r="4.5" fill="#15222f"/>
+    <text x="1068" y="104" text-anchor="middle" font-size="21" fill="#55647a">administration</text>
+    <line x1="1068" y1="132" x2="1068" y2="158" stroke="#c85c45" stroke-width="1.3" stroke-dasharray="2 4"/>
+    <path transform="translate(1068,166)" d="M 0 -7.5 Q 1.9 -1.9 7.5 0 Q 1.9 1.9 0 7.5 Q -1.9 1.9 -7.5 0 Q -1.9 -1.9 0 -7.5 Z" fill="#c85c45"/>
+  </g>
+
+  <!-- legend, bottom-right: what the accent ring means -->
+  <g transform="translate(1010,224)">
+    <path transform="translate(0,-4)" d="M 0 -7.5 Q 1.9 -1.9 7.5 0 Q 1.9 1.9 0 7.5 Q -1.9 1.9 -7.5 0 Q -1.9 -1.9 0 -7.5 Z" fill="#c85c45"/>
+    <text x="14" y="0" font-size="18" fill="#55647a">= an agent</text>
+  </g>
+</svg>

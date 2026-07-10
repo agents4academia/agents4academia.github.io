@@ -3,23 +3,46 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Resources — Agents4Academia</title>
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <title>Resources — Oxford–Singapore Hackathon</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;650;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("theme"); } catch (e) {}
+      if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = t;
+    })();
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css?v=6" />
 </head>
 <body>
 
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="./">Agents4Academia</a>
+    <a class="brand" href="../../" title="Agents4Academia — main site">
+      <svg class="node" viewBox="0 0 32 32" aria-hidden="true"><rect x="8" y="13.5" width="16" height="12" rx="3" fill="var(--plot)"/><rect x="11.2" y="16.8" width="2.9" height="4.8" rx="1.45" fill="#fff"/><rect x="17.9" y="16.8" width="2.9" height="4.8" rx="1.45" fill="#fff"/><path d="M2.5 10 16 5.5 29.5 10 16 14.5 Z" fill="var(--ink)"/><path d="M27.6 10.8 V 15.4" stroke="var(--accent)" stroke-width="1.7" stroke-linecap="round"/><circle cx="27.6" cy="17.2" r="2" fill="var(--accent)"/></svg>
+      Agents4Academia
+    </a>
     <nav class="site-nav" aria-label="Primary">
       <a href="./">About</a>
       <a href="schedule.html">Schedule</a>
       <a href="projects.html">Projects</a>
+      <a href="people.html">People</a>
       <a href="resources.html" aria-current="page">Resources</a>
     </nav>
+    <button class="theme-toggle" aria-label="Toggle dark mode"
+      onclick="var r=document.documentElement;var t=r.dataset.theme==='dark'?'light':'dark';r.dataset.theme=t;try{localStorage.setItem('theme',t)}catch(e){}">
+      <svg class="tt-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4.2"/>
+        <path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5 5l1.7 1.7M17.3 17.3 19 19M19 5l-1.7 1.7M6.7 17.3 5 19"/>
+      </svg>
+      <svg class="tt-moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M20.5 14.6A8.5 8.5 0 0 1 9.4 3.5a8.5 8.5 0 1 0 11.1 11.1z"/>
+      </svg>
+    </button>
   </div>
 </header>
 

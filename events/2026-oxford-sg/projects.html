@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
-  <title>Projects — Agents4Academia</title>
+  <title>Projects — Oxford–Singapore Hackathon</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;650;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet" />
@@ -22,17 +22,16 @@
 
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="./">
+    <a class="brand" href="../../" title="Agents4Academia — main site">
       <svg class="node" viewBox="0 0 32 32" aria-hidden="true"><rect x="8" y="13.5" width="16" height="12" rx="3" fill="var(--plot)"/><rect x="11.2" y="16.8" width="2.9" height="4.8" rx="1.45" fill="#fff"/><rect x="17.9" y="16.8" width="2.9" height="4.8" rx="1.45" fill="#fff"/><path d="M2.5 10 16 5.5 29.5 10 16 14.5 Z" fill="var(--ink)"/><path d="M27.6 10.8 V 15.4" stroke="var(--accent)" stroke-width="1.7" stroke-linecap="round"/><circle cx="27.6" cy="17.2" r="2" fill="var(--accent)"/></svg>
       Agents4Academia
     </a>
     <nav class="site-nav" aria-label="Primary">
       <a href="./">About</a>
-      <a href="principles.html">Principles</a>
-      <a href="events/">Events</a>
+      <a href="schedule.html">Schedule</a>
       <a href="projects.html" aria-current="page">Projects</a>
       <a href="people.html">People</a>
-      <a href="contribute.html">Contribute</a>
+      <a href="resources.html">Resources</a>
     </nav>
     <button class="theme-toggle" aria-label="Toggle dark mode"
       onclick="var r=document.documentElement;var t=r.dataset.theme==='dark'?'light':'dark';r.dataset.theme=t;try{localStorage.setItem('theme',t)}catch(e){}">
@@ -51,10 +50,10 @@
   <div class="wrap">
     <h1>Projects</h1>
     <p class="tagline">
-      All our code lives in the
+      All code from the hackathon lives in the
       <a href="https://github.com/Agents4Academia-AI">Agents4Academia-AI</a>
-      GitHub organisation — one repository per project. The list below updates
-      automatically.
+      GitHub organisation. Each team maintains its own repository there. The
+      list below updates automatically.
     </p>
 
     <ul class="plain resources projects" id="repo-list">
@@ -66,7 +65,7 @@
 <script>
 (function () {
   var ORG = "Agents4Academia-AI";
-  var EXCLUDE = [".github", "agents4academia.github.io", "media", "example-agents"];
+  var EXCLUDE = [".github", "agents4academia.github.io"];
   // Contributors hidden by squashed history etc. — shown in addition to the API list.
   var EXTRA_CONTRIBUTORS = { "prior": ["harit7"] };
   var list = document.getElementById("repo-list");

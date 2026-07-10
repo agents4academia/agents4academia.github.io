@@ -4,103 +4,430 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Agents4Academia</title>
-  <meta name="description" content="A two-week hackathon on AI agents for the scientific process. A collaboration between Oxford, NUS, and NTU, 14–26 June 2026." />
+  <meta name="description" content="A community of researchers building and understanding agentic tools for academic work — through hackathons and ongoing open-source development." />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;650;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("theme"); } catch (e) {}
+      if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = t;
+    })();
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css?v=6" />
 </head>
 <body>
 
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <!-- Agents4Academia icon set. One language: 24-viewBox, 1.6px ink strokes,
+       round caps, and one small filled "plotted point" per icon (class dot).
+       Colors come from CSS (currentColor + .dot fill), so icons follow text. -->
+
+  <!-- ── lifecycle stages ── -->
+  <symbol id="i-discover" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+    <circle cx="10.5" cy="10.5" r="6.5"/>
+    <path d="M15.5 15.5 L20 20"/>
+    <circle class="dot" cx="10.5" cy="10.5" r="1.7" fill="currentColor" stroke="none"/>
+  </symbol>
+
+  <symbol id="i-organise" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 9h16v10a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 19V9z"/>
+    <path d="M6 9V6.5A1.5 1.5 0 0 1 7.5 5h3l1.6 2"/>
+    <path d="M9 13h6"/>
+    <circle class="dot" cx="18" cy="6.5" r="1.7" fill="currentColor" stroke="none"/>
+  </symbol>
+
+  <symbol id="i-reproduce" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M19.5 12a7.5 7.5 0 0 1-13.2 4.9"/>
+    <path d="M4.5 12a7.5 7.5 0 0 1 13.2-4.9"/>
+    <path d="M17.5 3.5v4h-4"/>
+    <path d="M6.5 20.5v-4h4"/>
+    <circle class="dot" cx="12" cy="12" r="1.7" fill="currentColor" stroke="none"/>
+  </symbol>
+
+  <symbol id="i-verify" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="8"/>
+    <path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3"/>
+    <path d="M8.5 12.2 11 14.7 15.6 9.6"/>
+    <circle class="dot" cx="12" cy="4.5" r="1.4" fill="currentColor" stroke="none"/>
+  </symbol>
+
+  <symbol id="i-review" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14.5 5.5 18.5 9.5 9 19H5v-4z"/>
+    <path d="M12.5 7.5 16.5 11.5"/>
+    <path d="M4 22h16" stroke-opacity="0.55"/>
+    <circle class="dot" cx="18.5" cy="5.5" r="1.7" fill="currentColor" stroke="none"/>
+  </symbol>
+
+  <!-- ── principles ── -->
+  <symbol id="i-agency" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="7.5" r="3.5"/>
+    <path d="M5 20a7 7 0 0 1 14 0"/>
+  </symbol>
+
+  <symbol id="i-value" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+    <path d="M12 3 20 12 12 21 4 12z"/>
+    <path d="M8.5 12 12 8l3.5 4-3.5 4z" stroke-opacity="0.55"/>
+    <circle class="dot" cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+  </symbol>
+
+  <symbol id="i-safety" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3 19 6v6c0 4.4-3 7.6-7 9-4-1.4-7-4.6-7-9V6z"/>
+    <path d="M9 11.5 11.3 14 15 9.8"/>
+  </symbol>
+
+  <symbol id="i-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 6c-2-1.6-4.8-2-8-1.6V19c3.2-.4 6 0 8 1.6 2-1.6 4.8-2 8-1.6V4.4C16.8 4 14 4.4 12 6z"/>
+    <path d="M12 6v14.6"/>
+    <path d="M7 9.5c1.4-.3 2.7-.3 3.5-.2M13.5 9.3c.8-.1 2.1-.1 3.5.2" stroke-opacity="0.55"/>
+  </symbol>
+
+  <symbol id="i-community" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+    <circle cx="12" cy="5.5" r="2.3"/>
+    <circle cx="5.5" cy="17.5" r="2.3"/>
+    <circle cx="18.5" cy="17.5" r="2.3"/>
+    <path d="M10.4 7.4 7 15.4M13.6 7.4 17 15.4M7.8 17.5h8.4"/>
+  </symbol>
+
+  <!-- ── places & channels ── -->
+  <symbol id="i-github" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.58 9.58 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85V21c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/>
+  </symbol>
+
+  <symbol id="i-discord" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M19.3 5.3A16.9 16.9 0 0 0 15.1 4l-.2.4a15.6 15.6 0 0 0-5.8 0L8.9 4a16.9 16.9 0 0 0-4.2 1.3C2 9.1 1.3 12.8 1.6 16.5a17 17 0 0 0 5.2 2.6l.7-1.6a10 10 0 0 1-1.7-.8l.4-.3a12.1 12.1 0 0 0 10.4 0l.4.3c-.5.3-1.1.6-1.7.8l.7 1.6a17 17 0 0 0 5.2-2.6c.4-4.3-.7-8-2.9-11.2zM8.7 14.3c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2zm6.6 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2z"/>
+  </symbol>
+
+  <symbol id="i-x" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.7 3H21l-7.3 8.3L22.2 21h-6.7l-5.3-6.5L4.2 21H1l7.8-8.9L1.6 3h6.9l4.8 6 4.4-6zm-1.2 16h1.9L6.9 4.9H4.9L16.5 19z"/>
+  </symbol>
+
+  <symbol id="i-bluesky" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M5.3 4.2C7.6 5.9 10 9.4 12 12c2-2.6 4.4-6.1 6.7-7.8C20.3 3 22 2.7 22 5.9c0 .7-.4 5.5-.6 6.3-.8 2.7-3.6 3.4-6.1 3-4.3-.7 3.2.3 1.7 4.3-1.5 3.8-3.5-1.6-5-3.9-1.5 2.3-3.5 7.7-5 3.9-1.5-4 6-3.6 1.7-4.3-2.5.4-5.3-.3-6.1-3-.2-.8-.6-5.6-.6-6.3 0-3.2 1.7-2.9 3.3-1.7z"/>
+  </symbol>
+
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="5.5" width="18" height="13" rx="1.5"/>
+    <path d="M3.5 7 12 13.5 20.5 7"/>
+  </symbol>
+
+  <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+    <circle cx="12" cy="12" r="8.5"/>
+    <path d="M3.5 12h17M12 3.5c-2.5 2.3-3.7 5.2-3.7 8.5s1.2 6.2 3.7 8.5c2.5-2.3 3.7-5.2 3.7-8.5S14.5 5.8 12 3.5z"/>
+  </symbol>
+
+  <symbol id="i-institution" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 9.5 12 4l9 5.5"/>
+    <path d="M5 10v7M9.7 10v7M14.3 10v7M19 10v7"/>
+    <path d="M3.5 20.5h17M4.5 17.5h15"/>
+    <circle class="dot" cx="12" cy="7.2" r="1.3" fill="currentColor" stroke="none"/>
+  </symbol>
+
+  <symbol id="i-scholar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M2.5 9.5 12 5l9.5 4.5L12 14z"/>
+    <path d="M6.5 12v4.2c0 1.5 2.5 2.8 5.5 2.8s5.5-1.3 5.5-2.8V12"/>
+    <path d="M21 10v5" stroke-opacity="0.7"/>
+  </symbol>
+
+  <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 13.5V19a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 4 19V8a1.5 1.5 0 0 1 1.5-1.5H11"/>
+    <path d="M14.5 3.5H20.5V9.5"/>
+    <path d="M20 4 11.5 12.5"/>
+  </symbol>
+
+  <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 2.5h8l4 4V20a1.5 1.5 0 0 1-1.5 1.5h-10A1.5 1.5 0 0 1 5 20V4A1.5 1.5 0 0 1 6.5 2.5z"/>
+    <path d="M14 2.5V7h4.5"/>
+    <path d="M8.5 12h7M8.5 15.5h7"/>
+  </symbol>
+
+  <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3.5" y="5" width="17" height="16" rx="1.5"/>
+    <path d="M3.5 9.5h17M8 2.5V6M16 2.5V6"/>
+    <circle class="dot" cx="12" cy="15" r="1.6" fill="currentColor" stroke="none"/>
+  </symbol>
+</svg>
+
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="./">Agents4Academia</a>
+    <a class="brand" href="./">
+      <svg class="node" viewBox="0 0 32 32" aria-hidden="true"><rect x="8" y="13.5" width="16" height="12" rx="3" fill="var(--plot)"/><rect x="11.2" y="16.8" width="2.9" height="4.8" rx="1.45" fill="#fff"/><rect x="17.9" y="16.8" width="2.9" height="4.8" rx="1.45" fill="#fff"/><path d="M2.5 10 16 5.5 29.5 10 16 14.5 Z" fill="var(--ink)"/><path d="M27.6 10.8 V 15.4" stroke="var(--accent)" stroke-width="1.7" stroke-linecap="round"/><circle cx="27.6" cy="17.2" r="2" fill="var(--accent)"/></svg>
+      Agents4Academia
+    </a>
     <nav class="site-nav" aria-label="Primary">
       <a href="./" aria-current="page">About</a>
-      <a href="schedule.html">Schedule</a>
+      <a href="principles.html">Principles</a>
+      <a href="events/">Events</a>
       <a href="projects.html">Projects</a>
-      <a href="resources.html">Resources</a>
+      <a href="people.html">People</a>
+      <a href="contribute.html">Contribute</a>
     </nav>
+    <button class="theme-toggle" aria-label="Toggle dark mode"
+      onclick="var r=document.documentElement;var t=r.dataset.theme==='dark'?'light':'dark';r.dataset.theme=t;try{localStorage.setItem('theme',t)}catch(e){}">
+      <svg class="tt-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4.2"/>
+        <path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5 5l1.7 1.7M17.3 17.3 19 19M19 5l-1.7 1.7M6.7 17.3 5 19"/>
+      </svg>
+      <svg class="tt-moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M20.5 14.6A8.5 8.5 0 0 1 9.4 3.5a8.5 8.5 0 1 0 11.1 11.1z"/>
+      </svg>
+    </button>
   </div>
 </header>
 
 <main>
-  <div class="wrap">
-    <div class="cover">
-      <img src="assets/img/cover.svg"
-           alt="Star-chart style line drawing: an open book beneath a constellation of research symbols — a magnifying glass, a flask, a golden spark, a chart, and a manuscript — joined by fine lines among rings and scattered stars" />
+  <section class="hero">
+    <div class="wrap">
+      <p class="motto">Learn together · Build together</p>
+      <h1>Agents<span class="four">4</span>Academia</h1>
+      <p class="tagline">
+        A community of researchers building and understanding
+        agentic tools for academic work.
+      </p>
+      <ul class="channels">
+        <li><a href="https://github.com/Agents4Academia-AI">
+          <svg class="ico" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a></li>
+        <li><a href="https://discord.gg/fEDXaSWwj">
+          <svg class="ico" aria-hidden="true"><use href="#i-discord"/></svg>Discord</a></li>
+        <li><a href="https://x.com/agents4academia">
+          <svg class="ico" aria-hidden="true"><use href="#i-x"/></svg>@agents4academia</a></li>
+        <li><a href="https://bsky.app/profile/agents4academia.bsky.social">
+          <svg class="ico" aria-hidden="true"><use href="#i-bluesky"/></svg>Bluesky</a></li>
+      </ul>
     </div>
+  </section>
 
-    <h1>Agents4Academia</h1>
-    <p class="tagline">A two-week hackathon building AI agents for academia.</p>
+  <div class="wrap">
+    <figure class="figure">
+      <svg class="fig-inline" viewBox="0 0 1200 265" role="img" aria-label="The research workflow — literature discovery, knowledge organisation, coding, reproducibility, review, teaching &amp; learning, administration — with an agent attached at every stage" font-family="'IBM Plex Mono', ui-monospace, monospace">
+  <!-- The vision: one workflow line, an agent docked at every stage.
+       Labels are the seven areas named in the org README, verbatim. -->
+
+  <!-- the academic, working the line -->
+  <g transform="translate(38,125)" stroke="var(--ink)" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="0" cy="-13" r="5.5"/>
+    <path d="M -9 6 a 9 9 0 0 1 18 0"/>
+    <path d="M -9 -17.5 L 0 -22 L 9 -17.5 L 0 -13.5 Z" fill="var(--ink)"/>
+    <line x1="9" y1="-17.5" x2="9" y2="-11"/>
+  </g>
+
+  <!-- workflow line -->
+  <line x1="58" y1="125" x2="1150" y2="125" stroke="var(--ink)" stroke-width="1.5"/>
+  <line x1="1150" y1="125" x2="1136" y2="119" stroke="var(--ink)" stroke-width="1.5"/>
+  <line x1="1150" y1="125" x2="1136" y2="131" stroke="var(--ink)" stroke-width="1.5"/>
+
+  <!-- stations: dot on the line, dashed stem to an agent ring, label opposite -->
+  <g>
+    <!-- 1 literature discovery (label above, agent below) -->
+    <circle cx="120" cy="125" r="4.5" fill="var(--ink)"/>
+    <text x="120" y="80" text-anchor="middle" font-size="21" fill="var(--muted)">literature</text>
+    <text x="120" y="104" text-anchor="middle" font-size="21" fill="var(--muted)">discovery</text>
+    <line x1="120" y1="132" x2="120" y2="158" stroke="var(--accent)" stroke-width="1.3" stroke-dasharray="2 4"/>
+    <g transform="translate(120,166)" stroke="var(--accent)" fill="none" stroke-width="1.5" stroke-linecap="round">
+      <rect x="-7.5" y="-4" width="15" height="11" rx="2.5"/>
+      <line x1="0" y1="-4" x2="0" y2="-9"/>
+      <circle cx="0" cy="-10.5" r="1.6" fill="var(--accent)" stroke="none"/>
+      <circle cx="-3.2" cy="1.5" r="1.3" fill="var(--accent)" stroke="none"/>
+      <circle cx="3.2" cy="1.5" r="1.3" fill="var(--accent)" stroke="none"/>
+    </g>
+
+    <!-- 2 knowledge organisation (label below, agent above) -->
+    <circle cx="278" cy="125" r="4.5" fill="var(--ink)"/>
+    <text x="278" y="152" text-anchor="middle" font-size="21" fill="var(--muted)">knowledge</text>
+    <text x="278" y="170" text-anchor="middle" font-size="21" fill="var(--muted)">organisation</text>
+    <line x1="278" y1="118" x2="278" y2="92" stroke="var(--accent)" stroke-width="1.3" stroke-dasharray="2 4"/>
+    <g transform="translate(278,84)" stroke="var(--accent)" fill="none" stroke-width="1.5" stroke-linecap="round">
+      <rect x="-7.5" y="-4" width="15" height="11" rx="2.5"/>
+      <line x1="0" y1="-4" x2="0" y2="-9"/>
+      <circle cx="0" cy="-10.5" r="1.6" fill="var(--accent)" stroke="none"/>
+      <circle cx="-3.2" cy="1.5" r="1.3" fill="var(--accent)" stroke="none"/>
+      <circle cx="3.2" cy="1.5" r="1.3" fill="var(--accent)" stroke="none"/>
+    </g>
+
+    <!-- 3 coding (label above, agent below) -->
+    <circle cx="436" cy="125" r="4.5" fill="var(--ink)"/>
+    <text x="436" y="104" text-anchor="middle" font-size="21" fill="var(--muted)">coding</text>
+    <line x1="436" y1="132" x2="436" y2="158" stroke="var(--accent)" stroke-width="1.3" stroke-dasharray="2 4"/>
+    <g transform="translate(436,166)" stroke="var(--accent)" fill="none" stroke-width="1.5" stroke-linecap="round">
+      <rect x="-7.5" y="-4" width="15" height="11" rx="2.5"/>
+      <line x1="0" y1="-4" x2="0" y2="-9"/>
+      <circle cx="0" cy="-10.5" r="1.6" fill="var(--accent)" stroke="none"/>
+      <circle cx="-3.2" cy="1.5" r="1.3" fill="var(--accent)" stroke="none"/>
+      <circle cx="3.2" cy="1.5" r="1.3" fill="var(--accent)" stroke="none"/>
+    </g>
+
+    <!-- 4 reproducibility (label below, agent above) -->
+    <circle cx="594" cy="125" r="4.5" fill="var(--ink)"/>
+    <text x="594" y="152" text-anchor="middle" font-size="21" fill="var(--muted)">reproducibility</text>
+    <line x1="594" y1="118" x2="594" y2="92" stroke="var(--accent)" stroke-width="1.3" stroke-dasharray="2 4"/>
+    <g transform="translate(594,84)" stroke="var(--accent)" fill="none" stroke-width="1.5" stroke-linecap="round">
+      <rect x="-7.5" y="-4" width="15" height="11" rx="2.5"/>
+      <line x1="0" y1="-4" x2="0" y2="-9"/>
+      <circle cx="0" cy="-10.5" r="1.6" fill="var(--accent)" stroke="none"/>
+      <circle cx="-3.2" cy="1.5" r="1.3" fill="var(--accent)" stroke="none"/>
+      <circle cx="3.2" cy="1.5" r="1.3" fill="var(--accent)" stroke="none"/>
+    </g>
+
+    <!-- 5 review (label above, agent below) -->
+    <circle cx="752" cy="125" r="4.5" fill="var(--ink)"/>
+    <text x="752" y="104" text-anchor="middle" font-size="21" fill="var(--muted)">review</text>
+    <line x1="752" y1="132" x2="752" y2="158" stroke="var(--accent)" stroke-width="1.3" stroke-dasharray="2 4"/>
+    <g transform="translate(752,166)" stroke="var(--accent)" fill="none" stroke-width="1.5" stroke-linecap="round">
+      <rect x="-7.5" y="-4" width="15" height="11" rx="2.5"/>
+      <line x1="0" y1="-4" x2="0" y2="-9"/>
+      <circle cx="0" cy="-10.5" r="1.6" fill="var(--accent)" stroke="none"/>
+      <circle cx="-3.2" cy="1.5" r="1.3" fill="var(--accent)" stroke="none"/>
+      <circle cx="3.2" cy="1.5" r="1.3" fill="var(--accent)" stroke="none"/>
+    </g>
+
+    <!-- 6 teaching (label below, agent above) -->
+    <circle cx="910" cy="125" r="4.5" fill="var(--ink)"/>
+    <text x="910" y="152" text-anchor="middle" font-size="21" fill="var(--muted)">teaching &amp; learning</text>
+    <line x1="910" y1="118" x2="910" y2="92" stroke="var(--accent)" stroke-width="1.3" stroke-dasharray="2 4"/>
+    <g transform="translate(910,84)" stroke="var(--accent)" fill="none" stroke-width="1.5" stroke-linecap="round">
+      <rect x="-7.5" y="-4" width="15" height="11" rx="2.5"/>
+      <line x1="0" y1="-4" x2="0" y2="-9"/>
+      <circle cx="0" cy="-10.5" r="1.6" fill="var(--accent)" stroke="none"/>
+      <circle cx="-3.2" cy="1.5" r="1.3" fill="var(--accent)" stroke="none"/>
+      <circle cx="3.2" cy="1.5" r="1.3" fill="var(--accent)" stroke="none"/>
+    </g>
+
+    <!-- 7 administration (label above, agent below) -->
+    <circle cx="1068" cy="125" r="4.5" fill="var(--ink)"/>
+    <text x="1068" y="104" text-anchor="middle" font-size="21" fill="var(--muted)">administration</text>
+    <line x1="1068" y1="132" x2="1068" y2="158" stroke="var(--accent)" stroke-width="1.3" stroke-dasharray="2 4"/>
+    <g transform="translate(1068,166)" stroke="var(--accent)" fill="none" stroke-width="1.5" stroke-linecap="round">
+      <rect x="-7.5" y="-4" width="15" height="11" rx="2.5"/>
+      <line x1="0" y1="-4" x2="0" y2="-9"/>
+      <circle cx="0" cy="-10.5" r="1.6" fill="var(--accent)" stroke="none"/>
+      <circle cx="-3.2" cy="1.5" r="1.3" fill="var(--accent)" stroke="none"/>
+      <circle cx="3.2" cy="1.5" r="1.3" fill="var(--accent)" stroke="none"/>
+    </g>
+  </g>
+
+  <!-- legend, bottom-right: what the accent ring means -->
+  <g transform="translate(1010,224)">
+    <g transform="translate(0,-6)" stroke="var(--accent)" fill="none" stroke-width="1.5" stroke-linecap="round">
+      <rect x="-7.5" y="-4" width="15" height="11" rx="2.5"/>
+      <line x1="0" y1="-4" x2="0" y2="-9"/>
+      <circle cx="0" cy="-10.5" r="1.6" fill="var(--accent)" stroke="none"/>
+      <circle cx="-3.2" cy="1.5" r="1.3" fill="var(--accent)" stroke="none"/>
+      <circle cx="3.2" cy="1.5" r="1.3" fill="var(--accent)" stroke="none"/>
+    </g>
+    <text x="14" y="0" font-size="18" fill="var(--muted)">= an agent</text>
+  </g>
+</svg>
+    </figure>
 
     <p>
-      Two weeks, three universities, one question: how much of the scientific
-      grind can we hand to AI agents? Researchers from Oxford, NUS, and NTU
-      team up to prototype open-source agents for the parts of research that
-      eat your week: trawling literature, hunting grants, translating across
-      disciplines, coordinating projects, and judging whether research agents
-      are actually any good.
+      AI agents are changing what individuals can build: a recurring frustration
+      or a highly specific workflow can become a working tool in a fraction of
+      the time it used to take. Across academia, people are already
+      experimenting — literature discovery, knowledge organisation,
+      reproducibility, review, teaching, administration — but mostly in
+      isolation, with lessons rarely shared. Agents4Academia brings these
+      efforts together: sharing practical experience, identifying common needs,
+      and developing open, reusable tools shaped by researchers themselves.
     </p>
+
+    <h2>Our goals are simple:</h2>
+    <ol>
+      <li><strong>Learn together</strong> where agents add real value, where their limitations lie, and how best practices should evolve as the technology improves.</li>
+      <li><strong>Build together</strong> open and reusable tools for shared academic needs, adapting them over time to new capabilities and ways of working.</li>
+    </ol>
+    <p>
+      We welcome researchers and collaborators from all institutions and
+      disciplines to contribute to this shared effort. Our
+      <a href="principles.html">principles</a> guide the work.
+    </p>
+
+    <h2 id="cohort">Our first cohort (<a href="events/2026-oxford-sg/">Oxford–Singapore Hackathon</a>, June 2026)</h2>
+    <p>
+      Our first cohort launched with a two-week hackathon (14–26 June 2026),
+      running in parallel across Oxford Statistics, NUS, and NTU with generous
+      support from Anthropic. We deliberately didn't pre-assign projects:
+      participants identified concrete bottlenecks in their own scientific
+      workflows and self-organised into small teams around them, so the work
+      reflects researchers' real, felt needs rather than an imposed agenda.
+    </p>
+    <p>The hackathon shipped five open-source agents spanning the research lifecycle:</p>
+
+    <ol class="lifecycle">
+      <li>
+        <span class="station"><svg class="ico" aria-hidden="true"><use href="#i-discover"/></svg></span>
+        <span class="stage">Discover</span>
+        <a class="name" href="https://github.com/Agents4Academia-AI/prior">Prior</a>
+        <span class="desc">auditable knowledge graphs from primary literature</span>
+      </li>
+      <li>
+        <span class="station"><svg class="ico" aria-hidden="true"><use href="#i-organise"/></svg></span>
+        <span class="stage">Organise</span>
+        <a class="name" href="https://github.com/Agents4Academia-AI/UReKA">UReKA</a>
+        <span class="desc">Zotero, Notion, Obsidian &amp; arXiv, unified</span>
+      </li>
+      <li>
+        <span class="station"><svg class="ico" aria-hidden="true"><use href="#i-reproduce"/></svg></span>
+        <span class="stage">Reproduce</span>
+        <a class="name" href="https://github.com/Agents4Academia-AI/benchmark-replicator">Benchmark-Replicator</a>
+        <span class="desc">clean, runnable implementations of prior papers</span>
+      </li>
+      <li>
+        <span class="station"><svg class="ico" aria-hidden="true"><use href="#i-verify"/></svg></span>
+        <span class="stage">Verify</span>
+        <a class="name" href="https://github.com/Agents4Academia-AI/citation_verification">RefWarden</a>
+        <span class="desc">do citations exist, and do they support the claim?</span>
+      </li>
+      <li>
+        <span class="station"><svg class="ico" aria-hidden="true"><use href="#i-review"/></svg></span>
+        <span class="stage">Review</span>
+        <a class="name" href="https://github.com/Agents4Academia-AI/auto-reviewer">Auto-Reviewer</a>
+        <span class="desc">claim–evidence maps, novelty and rigor checks</span>
+      </li>
+    </ol>
 
     <p>
-      Everything ships in the open under permissive licences at
-      <a href="https://github.com/agents4academia">github.com/agents4academia</a>.
-      By demo day we want working tools, practical lessons on building research
-      agents, and at least one agent that an academic refuses to stop using.
+      While building side by side, the teams repeatedly encountered the same
+      infrastructure needs. We therefore extracted them into
+      <a href="https://github.com/Agents4Academia-AI/academia-core"><strong>academia-core</strong></a>:
+      shared components for full-text ingestion, citation resolution, and
+      evidence-grounded judging that other research agents can build on.
     </p>
 
-    <dl class="facts">
-      <div>
-        <dt>Dates</dt>
-        <dd>14 – 26 June 2026</dd>
-      </div>
-      <div>
-        <dt>Venue</dt>
-        <dd>
-          Department of Statistics, University of Oxford<br />
-          National University of Singapore (NUS)<br />
-          Nanyang Technological University (NTU)
-        </dd>
-      </div>
-      <div>
-        <dt>Format</dt>
-        <dd>Invitation-only</dd>
-      </div>
-      <div>
-        <dt>Organizers</dt>
-        <dd>
-          Klara Kaleb, Harit Vishwakarma (Oxford)<br />
-          Wei Liu (NUS)
-        </dd>
-      </div>
-      <div>
-        <dt>Project advisors</dt>
-        <dd>
-          Yee Whye Teh, Tom Rainforth (Oxford)<br />
-          Wee Sun Lee (NUS)<br />
-          Luke Ong (NTU)
-        </dd>
-      </div>
-      <div>
-        <dt>Participants</dt>
-        <dd>Researchers from Oxford, NUS, and NTU</dd>
-      </div>
-    </dl>
+    <h2>Get involved</h2>
+    <ul>
+      <li><strong>Try the tools.</strong> Each repository includes setup instructions and examples.</li>
+      <li><strong>Contribute.</strong> Pull requests, evaluations, integrations, and tests on new domains are welcome.</li>
+      <li><strong>Build on the shared infrastructure.</strong> Use <a href="https://github.com/Agents4Academia-AI/academia-core">academia-core</a> for your own research agents.</li>
+      <li><strong>Organise a chapter.</strong> Run an Agents4Academia hackathon at your institution.</li>
+      <li><strong>Join the next cohort.</strong> We are planning the next hackathon.</li>
+      <li><strong>Join the conversation.</strong> Find us on <a href="https://discord.gg/fEDXaSWwj">Discord</a>, <a href="https://x.com/agents4academia">X</a>, and <a href="https://bsky.app/profile/agents4academia.bsky.social">Bluesky</a>.</li>
+    </ul>
 
     <div class="ack">
-      <p class="ack-label">Thanks for the support.</p>
-      <div class="logo-row">
-        <a href="https://www.anthropic.com"><img src="assets/img/anthropic.svg" alt="Anthropic" width="106" height="14" /></a>
-        <!-- Drop official logo files in assets/img/ and uncomment:
-        <a href="https://www.ox.ac.uk"><img src="assets/img/oxford.svg" alt="University of Oxford" /></a>
-        <a href="https://nus.edu.sg"><img src="assets/img/nus.svg" alt="National University of Singapore" /></a>
-        <a href="https://www.ntu.edu.sg"><img src="assets/img/ntu.svg" alt="Nanyang Technological University" /></a>
-        -->
-      </div>
+      <p class="ack-label">A collaboration across</p>
+      <ul class="institutions">
+        <li><a href="https://www.stats.ox.ac.uk/" title="Oxford Statistics"><img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/University_of_Oxford.svg/500px-University_of_Oxford.svg.png"
+          alt="University of Oxford" loading="lazy" onerror="this.parentElement.textContent='University of Oxford'" /></a></li>
+        <li><a href="https://www.comp.nus.edu.sg/" title="NUS School of Computing"><img
+          src="assets/img/nus.png"
+          alt="National University of Singapore" loading="lazy" onerror="this.parentElement.textContent='National University of Singapore'" /></a></li>
+        <li><a href="https://www.ntu.edu.sg/computing" title="NTU College of Computing and Data Science"><img
+          src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c6/Nanyang_Technological_University.svg/330px-Nanyang_Technological_University.svg.png"
+          alt="Nanyang Technological University" loading="lazy" onerror="this.parentElement.textContent='Nanyang Technological University'" /></a></li>
+      </ul>
     </div>
   </div>
 </main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Agents4Academia · est. June 2026 · open source, researcher-led</p>
+  </div>
+</footer>
 
 </body>
 </html>

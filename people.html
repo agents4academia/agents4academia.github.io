@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <title>People — Agents4Academia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;650;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("theme"); } catch (e) {}
+      if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = t;
+    })();
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css?v=6" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./">
+      <svg class="node" viewBox="0 0 32 32" aria-hidden="true"><rect x="8" y="13.5" width="16" height="12" rx="3" fill="var(--plot)"/><rect x="11.2" y="16.8" width="2.9" height="4.8" rx="1.45" fill="#fff"/><rect x="17.9" y="16.8" width="2.9" height="4.8" rx="1.45" fill="#fff"/><path d="M2.5 10 16 5.5 29.5 10 16 14.5 Z" fill="var(--ink)"/><path d="M27.6 10.8 V 15.4" stroke="var(--accent)" stroke-width="1.7" stroke-linecap="round"/><circle cx="27.6" cy="17.2" r="2" fill="var(--accent)"/></svg>
+      Agents4Academia
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="./">About</a>
+      <a href="principles.html">Principles</a>
+      <a href="events/">Events</a>
+      <a href="projects.html">Projects</a>
+      <a href="people.html" aria-current="page">People</a>
+      <a href="contribute.html">Contribute</a>
+    </nav>
+    <button class="theme-toggle" aria-label="Toggle dark mode"
+      onclick="var r=document.documentElement;var t=r.dataset.theme==='dark'?'light':'dark';r.dataset.theme=t;try{localStorage.setItem('theme',t)}catch(e){}">
+      <svg class="tt-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4.2"/>
+        <path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5 5l1.7 1.7M17.3 17.3 19 19M19 5l-1.7 1.7M6.7 17.3 5 19"/>
+      </svg>
+      <svg class="tt-moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M20.5 14.6A8.5 8.5 0 0 1 9.4 3.5a8.5 8.5 0 1 0 11.1 11.1z"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <h1>People</h1>
+    <p class="tagline">
+      The community so far: researchers from Oxford, NUS, and NTU building
+      the <a href="projects.html">projects</a>, plus organisers and advisors.
+      Want to join? See <a href="contribute.html">how to contribute</a>.
+    </p>
+
+    <h2>University of Oxford</h2>
+    <ul class="people-grid">
+      <li>
+        <img class="mug" width="56" height="56" src="https://www.stats.ox.ac.uk/sites/default/files/styles/person_banner/public/2024-06/KlaraKaleb.jpg.webp?itok=1VVOxeN9" alt="Klara Kaleb" loading="lazy" onerror="this.style.display='none'" />
+        <div class="bio">
+          <a class="name" href="https://klarakaleb.github.io/">Klara Kaleb</a>
+          <span class="role">Postdoc · organiser</span>
+          <span class="area">LLMs, NLP, information retrieval</span>
+          <span class="proj"><a href="https://github.com/Agents4Academia-AI/prior">prior</a></span>
+        </div>
+      </li>
+      <li>
+        <img class="mug" width="56" height="56" src="https://harit7.github.io/assets/images/profile-image.jpg" alt="Harit Vishwakarma" loading="lazy" onerror="this.style.display='none'" />
+        <div class="bio">
+          <a class="name" href="https://harit7.github.io/">Harit Vishwakarma</a>
+          <span class="role">Postdoc · organiser</span>
+          <span class="area">Machine learning, LLMs, agentic AI</span>
+          <span class="proj"><a href="https://github.com/Agents4Academia-AI/prior">prior</a></span>
+        </div>
+      </li>
+      <li>
+        <img class="mug" width="56" height="56" src="https://www.stats.ox.ac.uk/sites/default/files/styles/person_banner/public/2022-08/yeewhye_0109-2.jpg.webp?h=d224ada0&itok=quvfbP9a" alt="Yee Whye Teh" loading="lazy" onerror="this.style.display='none'" />
+        <div class="bio">
+          <a class="name" href="https://www.stats.ox.ac.uk/people/yee-whye-teh">Yee Whye Teh</a>
+          <span class="role">Faculty · organiser</span>
+          <span class="area">Machine learning</span>
+          <span class="proj"><a href="https://github.com/Agents4Academia-AI/UReKA">UReKA</a></span>
+        </div>
+      </li>
+      <li>
+        <img class="mug" width="56" height="56" src="https://www.robots.ox.ac.uk/~twgr/assets/images/mugshot.jpeg" alt="Tom Rainforth" loading="lazy" onerror="this.style.display='none'" />
+        <div class="bio">
+          <a class="name" href="https://www.robots.ox.ac.uk/~twgr/">Tom Rainforth</a>
+          <span class="role">Faculty · advisor</span>
+          <span class="area">Probabilistic machine learning</span>
+        </div>
+      </li>
+      <li>
+        <img class="mug" width="56" height="56" src="https://aryaakhavan.github.io/avatar.jpg" alt="Arya Akhavan" loading="lazy" onerror="this.style.display='none'" />
+        <div class="bio">
+          <a class="name" href="https://aryaakhavan.github.io/">Arya Akhavan</a>
+          <span class="role">Postdoc</span>
+          <span class="area">LLM reasoning, reinforcement learning, optimisation</span>
+          <span class="proj"><a href="https://github.com/Agents4Academia-AI/benchmark-replicator">benchmark-replicator</a></span>
+        </div>
+      </li>
+      <li>
+        <img class="mug" width="56" height="56" src="https://fbickfordsmith.com/photo.jpeg" alt="Freddie Bickford Smith" loading="lazy" onerror="this.style.display='none'" />
+        <div class="bio">
+          <a class="name" href="https://fbickfordsmith.com/">Freddie Bickford Smith</a>
+          <span class="role">Postdoc</span>
+          <span class="area">Decision theory, data acquisition, uncertainty</span>
+        </div>
+      </li>
+      <li>
+        <img class="mug" width="56" height="56" src="https://sahel13.github.io/images/profile_picture.png" alt="Sahel Iqbal" loading="lazy" onerror="this.style.display='none'" />
+        <div class="bio">
+          <a class="name" href="https://sahel13.github.io/">Sahel Iqbal</a>
+          <span class="role">Postdoc</span>
+          <span class="area">Probabilistic ML, Bayesian experimental design</span>
+          <span class="proj"><a href="https://github.com/Agents4Academia-AI/benchmark-replicator">benchmark-replicator</a></span>
+        </div>
+      </li>
+      <li>
+        <img class="mug" width="56" height="56" src="https://olgaisupova.github.io/images/quater_photo.jpg" alt="Olga Isupova" loading="lazy" onerror="this.style.display='none'" />
+        <div class="bio">
+          <a class="name" href="https://olgaisupova.github.io/">Olga Isupova</a>
+          <span class="role">Postdoc</span>
+          <span class="area">Bayesian methods, computer vision, ecoacoustics</span>
+          <span class="proj"><a href="https://github.com/Agents4Academia-AI/benchmark-replicator">benchmark-replicator</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="mug ph" aria-hidden="true">DP</span>
+        <div class="bio">
+          <a class="name" href="https://scholar.google.com/citations?user=TDakv1QAAAAJ&hl=en">Debolina Paul</a>
+          <span class="role">PhD student</span>
+          <span class="area">Learning theory, statistics</span>
+          <span class="proj"><a href="https://github.com/Agents4Academia-AI/UReKA">UReKA</a></span>
+        </div>
+      </li>
+      <li>
+        <img class="mug" width="56" height="56" src="https://npqst.github.io/images/profile.jpg" alt="Nele Quast" loading="lazy" onerror="this.style.display='none'" />
+        <div class="bio">
+          <a class="name" href="https://npqst.github.io/">Nele Quast</a>
+          <span class="role">Postdoc</span>
+          <span class="area">Protein structure prediction and design</span>
+        </div>
+      </li>
+      <li>
+        <img class="mug" width="56" height="56" src="https://silviasapora.github.io/profile_photo.jpg" alt="Silvia Sapora" loading="lazy" onerror="this.style.display='none'" />
+        <div class="bio">
+          <a class="name" href="https://silviasapora.github.io/">Silvia Sapora</a>
+          <span class="role">PhD student</span>
+          <span class="area">Reinforcement learning, LLMs, meta-learning</span>
+          <span class="proj"><a href="https://github.com/Agents4Academia-AI/UReKA">UReKA</a></span>
+        </div>
+      </li>
+      <li>
+        <img class="mug" width="56" height="56" src="https://pragyasingh7.github.io/images/profile_reuben2.jpg" alt="Pragya Singh" loading="lazy" onerror="this.style.display='none'" />
+        <div class="bio">
+          <a class="name" href="https://pragyasingh7.github.io/">Pragya Singh</a>
+          <span class="role">PhD student</span>
+          <span class="area">Generative modelling of amorphous materials</span>
+          <span class="proj"><a href="https://github.com/Agents4Academia-AI/UReKA">UReKA</a></span>
+        </div>
+      </li>
+      <li>
+        <img class="mug" width="56" height="56" src="https://satyammohla.com/frontpage/mymainpic.jpg" alt="Satyam Mohla" loading="lazy" onerror="this.style.display='none'" />
+        <div class="bio">
+          <a class="name" href="https://satyammohla.com/">Satyam Mohla</a>
+          <span class="role">PhD student</span>
+          <span class="area">Agentic AI and LLMs for science</span>
+          <span class="proj"><a href="https://github.com/Agents4Academia-AI/auto-reviewer">auto-reviewer</a></span>
+        </div>
+      </li>
+      <li>
+        <img class="mug" width="56" height="56" src="https://avatars.githubusercontent.com/eleanortrollope" alt="Eleanor Trollope" loading="lazy" onerror="this.style.display='none'" />
+        <div class="bio">
+          <a class="name" href="https://github.com/eleanortrollope">Eleanor Trollope</a>
+          <span class="role">PhD student</span>
+          <span class="area">Diffusion models for inverse problems</span>
+          <span class="proj"><a href="https://github.com/Agents4Academia-AI/UReKA">UReKA</a></span>
+        </div>
+      </li>
+    </ul>
+
+    <h2>National University of Singapore</h2>
+    <ul class="people-grid">
+      <li>
+        <img class="mug" width="56" height="56" src="https://www.comp.nus.edu.sg/~leews/leews.jpg" alt="Wee Sun Lee" loading="lazy" onerror="this.style.display='none'" />
+        <div class="bio">
+          <a class="name" href="https://www.comp.nus.edu.sg/~leews/">Wee Sun Lee</a>
+          <span class="role">Faculty · advisor</span>
+          <span class="area">Machine learning, planning under uncertainty</span>
+          <span class="proj"><a href="https://github.com/Agents4Academia-AI/citation_verification">citation-verification</a> · <a href="https://github.com/Agents4Academia-AI/UReKA">UReKA</a> · <a href="https://github.com/Agents4Academia-AI/auto-reviewer">auto-reviewer</a></span>
+        </div>
+      </li>
+      <li>
+        <img class="mug" width="56" height="56" src="https://weiliu876.github.io/images/dengjizhao2.png" alt="Wei Liu" loading="lazy" onerror="this.style.display='none'" />
+        <div class="bio">
+          <a class="name" href="https://weiliu876.github.io/">Wei Liu</a>
+          <span class="role">Postdoc</span>
+          <span class="area">LLMs, interpretability, causality</span>
+          <span class="proj"><a href="https://github.com/Agents4Academia-AI/auto-reviewer">auto-reviewer</a> · <a href="https://github.com/Agents4Academia-AI/citation_verification">citation-verification</a></span>
+        </div>
+      </li>
+      <li>
+        <img class="mug" width="56" height="56" src="https://duynht.github.io/authors/admin/avatar_hu2454807924989a0639c6d56dcdf41353_286294_270x270_fill_lanczos_center_3.png" alt="T. Duy Nguyen-Hien" loading="lazy" onerror="this.style.display='none'" />
+        <div class="bio">
+          <a class="name" href="https://duynht.github.io/">T. Duy Nguyen-Hien</a>
+          <span class="role">PhD student</span>
+          <span class="area">Decision-making under uncertainty</span>
+          <span class="proj"><a href="https://github.com/Agents4Academia-AI/UReKA">UReKA</a></span>
+        </div>
+      </li>
+      <li>
+        <img class="mug" width="56" height="56" src="https://avatars.githubusercontent.com/keario" alt="Keari Ong" loading="lazy" onerror="this.style.display='none'" />
+        <div class="bio">
+          <a class="name" href="https://github.com/keario">Keari Ong</a>
+          <span class="role">Undergraduate</span>
+          <span class="area">LLMs, data science</span>
+          <span class="proj"><a href="https://github.com/Agents4Academia-AI/auto-reviewer">auto-reviewer</a></span>
+        </div>
+      </li>
+      <li>
+        <img class="mug" width="56" height="56" src="https://ngocquan.com/images/profile.jpg" alt="Quan Pham" loading="lazy" onerror="this.style.display='none'" />
+        <div class="bio">
+          <a class="name" href="https://ngocquan.com/">Quan Pham</a>
+          <span class="role">Incoming PhD student</span>
+          <span class="area">LLM post-training, test-time scaling</span>
+          <span class="proj"><a href="https://github.com/Agents4Academia-AI/auto-reviewer">auto-reviewer</a> · <a href="https://github.com/Agents4Academia-AI/UReKA">UReKA</a></span>
+        </div>
+      </li>
+      <li>
+        <img class="mug" width="56" height="56" src="https://zz1358m.github.io/zhizheng.github.io/images/profile.png" alt="Zhi Zheng" loading="lazy" onerror="this.style.display='none'" />
+        <div class="bio">
+          <a class="name" href="https://zz1358m.github.io/zhizheng.github.io/">Zhi Zheng</a>
+          <span class="role">PhD student</span>
+          <span class="area">LLMs, latent reasoning, reinforcement learning</span>
+          <span class="proj"><a href="https://github.com/Agents4Academia-AI/auto-reviewer">auto-reviewer</a></span>
+        </div>
+      </li>
+    </ul>
+
+    <h2>Nanyang Technological University</h2>
+    <ul class="people-grid">
+      <li>
+        <img class="mug" width="56" height="56" src="https://www3.ntu.edu.sg/home/luke.ong/Images/LukeOng-Nov22.jpeg" alt="Luke Ong" loading="lazy" onerror="this.style.display='none'" />
+        <div class="bio">
+          <a class="name" href="https://www3.ntu.edu.sg/home/luke.ong/">Luke Ong</a>
+          <span class="role">Faculty · advisor</span>
+          <span class="area">AI safety, neuro-symbolic AI</span>
+          <span class="proj"><a href="https://github.com/Agents4Academia-AI/citation_verification">citation-verification</a></span>
+        </div>
+      </li>
+      <li>
+        <img class="mug" width="56" height="56" src="https://shuqi131.github.io/assets/img/me.jpg" alt="Shuqi Liu" loading="lazy" onerror="this.style.display='none'" />
+        <div class="bio">
+          <a class="name" href="https://shuqi131.github.io/">Shuqi Liu</a>
+          <span class="role">PhD student</span>
+          <span class="area">Trustworthy ML, uncertainty quantification</span>
+          <span class="proj"><a href="https://github.com/Agents4Academia-AI/citation_verification">citation-verification</a></span>
+        </div>
+      </li>
+      <li>
+        <img class="mug" width="56" height="56" src="https://avatars.githubusercontent.com/rareone0602" alt="Po Hung Yeh" loading="lazy" onerror="this.style.display='none'" />
+        <div class="bio">
+          <a class="name" href="https://scholar.google.com/citations?user=rDzzITAAAAAJ">Po Hung Yeh</a>
+          <span class="role">PhD student</span>
+          <span class="area">Information theory, LLMs for Lean</span>
+          <span class="proj"><a href="https://github.com/Agents4Academia-AI/citation_verification">citation-verification</a> · <a href="https://github.com/Agents4Academia-AI/UReKA">UReKA</a></span>
+        </div>
+      </li>
+      <li>
+        <img class="mug" width="56" height="56" src="https://hustyyq.github.io/Figures/yunqiao.jpg" alt="Yunqiao Yang" loading="lazy" onerror="this.style.display='none'" />
+        <div class="bio">
+          <a class="name" href="https://hustyyq.github.io/">Yunqiao Yang</a>
+          <span class="role">Postdoc</span>
+          <span class="area">LLMs, computer vision, model editing</span>
+          <span class="proj"><a href="https://github.com/Agents4Academia-AI/citation_verification">citation-verification</a></span>
+        </div>
+      </li>
+      <li>
+        <img class="mug" width="56" height="56" src="https://avatars.githubusercontent.com/stevie1023" alt="Mingye Zhu" loading="lazy" onerror="this.style.display='none'" />
+        <div class="bio">
+          <a class="name" href="https://stevie1023.github.io/">Mingye Zhu</a>
+          <span class="role">Incoming Postdoc</span>
+          <span class="area">LLM preference alignment, reasoning</span>
+          <span class="proj"><a href="https://github.com/Agents4Academia-AI/citation_verification">citation-verification</a></span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</main>
+
+</body>
+</html>
