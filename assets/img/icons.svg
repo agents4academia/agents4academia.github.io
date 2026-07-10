@@ -121,6 +121,16 @@
     <path d="M8.5 12h7M8.5 15.5h7"/>
   </symbol>
 
+  <symbol id="i-gform" viewBox="0 0 24 24">
+    <path d="M6 2h9l4.5 4.5V20a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z" fill="#7248B9"/>
+    <path d="M15 2v4.5h4.5z" fill="#B39DDB"/>
+    <g fill="#fff">
+      <circle cx="8.6" cy="11.5" r="1.1"/><rect x="10.9" y="10.7" width="6" height="1.6" rx="0.8"/>
+      <circle cx="8.6" cy="15" r="1.1"/><rect x="10.9" y="14.2" width="6" height="1.6" rx="0.8"/>
+      <circle cx="8.6" cy="18.5" r="1.1"/><rect x="10.9" y="17.7" width="6" height="1.6" rx="0.8"/>
+    </g>
+  </symbol>
+
   <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
     <rect x="3.5" y="5" width="17" height="16" rx="1.5"/>
     <path d="M3.5 9.5h17M8 2.5V6M16 2.5V6"/>
